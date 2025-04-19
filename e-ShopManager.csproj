@@ -63,24 +63,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
-    <Compile Include="E-Shop.cs">
+    <Compile Include="Forms\E-Shop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="E-Shop.Designer.cs">
+    <Compile Include="Forms\E-Shop.Designer.cs">
       <DependentUpon>E-Shop.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserAuth.cs">
+    <Compile Include="Forms\UserAuth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserAuth.Designer.cs">
+    <Compile Include="Forms\UserAuth.Designer.cs">
       <DependentUpon>UserAuth.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="E-Shop.resx">
+    <EmbeddedResource Include="Forms\E-Shop.resx">
       <DependentUpon>E-Shop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserAuth.resx">
+    <EmbeddedResource Include="Forms\UserAuth.resx">
       <DependentUpon>UserAuth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
