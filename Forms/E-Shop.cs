@@ -93,8 +93,9 @@ namespace e_ShopManager
 
         private void UserBtn_Click(object sender, EventArgs e)
         {
-            this.OpenChildForm(new User(currentUsername));
+            this.OpenChildForm(new User(this, currentUsername));
         }
+
 
         private void LogoLabel_Click(object sender, EventArgs e)
         {
