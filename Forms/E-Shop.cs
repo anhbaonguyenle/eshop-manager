@@ -72,27 +72,27 @@ namespace e_ShopManager
 
         private void CustomerBtn_Click(object sender, EventArgs e)
         {
-
+            this.OpenChildForm(new Customer());
         }
 
         private void OrderBtn_Click(object sender, EventArgs e)
         {
-
+            this.OpenChildForm(new Order());
         }
 
         private void DashboardBtn_Click(object sender, EventArgs e)
         {
-
+            this.OpenChildForm(new Dashboard());
         }
 
         private void UserBtn_Click(object sender, EventArgs e)
         {
-
+            this.OpenChildForm(new User());
         }
 
         private void LogoLabel_Click(object sender, EventArgs e)
         {
-
+            this.OpenChildForm(new Product());
         }
     }
     
