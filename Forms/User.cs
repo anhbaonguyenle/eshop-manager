@@ -90,13 +90,16 @@ namespace e_ShopManager.Forms
 
         private void EditUserBtn_Click(object sender, EventArgs e)
         {
-            EditUser editUser = new EditUser(currentUsername);
-            editUser.ShowDialog();
+            EditUser editForm = new EditUser(currentUsername);
+            editForm.Owner = this.menuForm;
+            editForm.ShowDialog();
+
         }
 
         private void AddUserBtn_Click(object sender, EventArgs e)
         {
-
+            AddUser addform = new AddUser();
+            addform.ShowDialog();
         }
 
         private void LogOut_Click(object sender, EventArgs e)

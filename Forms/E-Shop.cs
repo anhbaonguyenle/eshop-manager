@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using e_ShopManager.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace e_ShopManager
 {
@@ -100,6 +101,11 @@ namespace e_ShopManager
         private void LogoLabel_Click(object sender, EventArgs e)
         {
             this.OpenChildForm(new Product());
+        }
+
+        internal void ReloadUserForm(string currentUsername)
+        {
+            this.OpenChildForm(new User(this, currentUsername));
         }
     }
     

@@ -70,6 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
+    <Compile Include="Forms\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,11 +132,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\E-Shop.resx">
       <DependentUpon>E-Shop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditUser.resx">
+      <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
