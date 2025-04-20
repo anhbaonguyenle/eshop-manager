@@ -12,9 +12,27 @@ namespace e_ShopManager.Forms
 {
     public partial class User : Form
     {
-        public User()
+        private string currentUsername;
+        public User(string Username)
         {
             InitializeComponent();
+            currentUsername = Username;
+            HiLabel.Text = $"Hello {currentUsername}";
+        }
+
+        private void ChangePassBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditUserBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddUserBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

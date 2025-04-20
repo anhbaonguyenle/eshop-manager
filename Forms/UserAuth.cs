@@ -108,7 +108,7 @@ namespace e_ShopManager
 
                             if (isValid)
                             {
-                                MenuForm mnf = new MenuForm();
+                                MenuForm mnf = new MenuForm(username);
                                 this.Visible = false;
                                 mnf.ShowDialog();
                                 this.Close();

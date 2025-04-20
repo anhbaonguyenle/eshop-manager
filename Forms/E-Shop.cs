@@ -14,11 +14,17 @@ namespace e_ShopManager
     public partial class MenuForm : Form
     {
         private Form activeForm = null;
-        public MenuForm()
+        private string currentUsername;
+
+        public MenuForm(string username)
         {
             InitializeComponent();
+            currentUsername = username;
+
             this.Resize += MenuForm_Resize;
             MenuForm_Resize(null, null);
+            this.OpenChildForm(new Product());
+            UserBtn.Text = $"User: {currentUsername}";
         }
         private void OpenChildForm(Form childForm)
         {
@@ -87,7 +93,7 @@ namespace e_ShopManager
 
         private void UserBtn_Click(object sender, EventArgs e)
         {
-            this.OpenChildForm(new User());
+            this.OpenChildForm(new User(currentUsername));
         }
 
         private void LogoLabel_Click(object sender, EventArgs e)
