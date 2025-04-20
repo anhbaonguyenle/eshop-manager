@@ -7,16 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using e_ShopManager.Forms;
 
 namespace e_ShopManager
 {
     public partial class MenuForm : Form
     {
+        private Form activeForm = null;
         public MenuForm()
         {
             InitializeComponent();
             this.Resize += MenuForm_Resize;
             MenuForm_Resize(null, null);
+        }
+        private void OpenChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            ChildFormPanel.Controls.Clear();
+            ChildFormPanel.Controls.Add(childForm);
+            ChildFormPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
         private void MenuForm_Resize(object sender, EventArgs e)
         {
@@ -47,6 +64,37 @@ namespace e_ShopManager
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void ProductBtn_Click(object sender, EventArgs e)
+        {
+            this.OpenChildForm(new Product());
+        }
+
+        private void CustomerBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DashboardBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+    
 
 }
