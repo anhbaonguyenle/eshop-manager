@@ -33,9 +33,11 @@
             this.ChangePassBtn = new System.Windows.Forms.Button();
             this.EditUserBtn = new System.Windows.Forms.Button();
             this.AddUserBtn = new System.Windows.Forms.Button();
+            this.LogOut = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.UserData = new System.Windows.Forms.DataGridView();
             this.createdattxt = new System.Windows.Forms.Label();
             this.Roletxt = new System.Windows.Forms.Label();
             this.Emailtxt = new System.Windows.Forms.Label();
@@ -48,9 +50,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.IdLabel = new System.Windows.Forms.Label();
-            this.LogOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserData)).BeginInit();
             this.SuspendLayout();
             // 
             // HiLabel
@@ -126,12 +128,28 @@
             this.AddUserBtn.UseVisualStyleBackColor = false;
             this.AddUserBtn.Click += new System.EventHandler(this.AddUserBtn_Click);
             // 
+            // LogOut
+            // 
+            this.LogOut.BackColor = System.Drawing.Color.Firebrick;
+            this.LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOut.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut.ForeColor = System.Drawing.SystemColors.Control;
+            this.LogOut.Location = new System.Drawing.Point(695, 0);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(103, 43);
+            this.LogOut.TabIndex = 3;
+            this.LogOut.Text = "Log Out";
+            this.LogOut.UseVisualStyleBackColor = false;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
+            // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(143, 405);
+            this.panel2.Size = new System.Drawing.Size(143, 574);
             this.panel2.TabIndex = 2;
             // 
             // panel3
@@ -139,11 +157,12 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(657, 45);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(143, 405);
+            this.panel3.Size = new System.Drawing.Size(143, 574);
             this.panel3.TabIndex = 3;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.UserData);
             this.panel4.Controls.Add(this.createdattxt);
             this.panel4.Controls.Add(this.Roletxt);
             this.panel4.Controls.Add(this.Emailtxt);
@@ -159,8 +178,16 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(143, 45);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(514, 405);
+            this.panel4.Size = new System.Drawing.Size(514, 574);
             this.panel4.TabIndex = 4;
+            // 
+            // UserData
+            // 
+            this.UserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UserData.Location = new System.Drawing.Point(55, 266);
+            this.UserData.Name = "UserData";
+            this.UserData.Size = new System.Drawing.Size(406, 296);
+            this.UserData.TabIndex = 12;
             // 
             // createdattxt
             // 
@@ -270,27 +297,11 @@
             this.IdLabel.TabIndex = 0;
             this.IdLabel.Text = "ID:";
             // 
-            // LogOut
-            // 
-            this.LogOut.BackColor = System.Drawing.Color.Firebrick;
-            this.LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOut.Dock = System.Windows.Forms.DockStyle.Right;
-            this.LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOut.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogOut.Location = new System.Drawing.Point(695, 0);
-            this.LogOut.Name = "LogOut";
-            this.LogOut.Size = new System.Drawing.Size(103, 43);
-            this.LogOut.TabIndex = 3;
-            this.LogOut.Text = "Log Out";
-            this.LogOut.UseVisualStyleBackColor = false;
-            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
-            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 619);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -301,6 +312,7 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,5 +340,6 @@
         private System.Windows.Forms.Label Usernametxt;
         private System.Windows.Forms.Label Idtxt;
         private System.Windows.Forms.Button LogOut;
+        private System.Windows.Forms.DataGridView UserData;
     }
 }

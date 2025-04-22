@@ -21,6 +21,7 @@ namespace e_ShopManager.Forms
             currentUsername = Username;
             GetData(currentUsername);
             CheckBoss(currentUsername);
+            User_Load();
             HiLabel.Text = $"Hello {currentUsername}";
             this.menuForm = parent;
         }
@@ -51,7 +52,7 @@ namespace e_ShopManager.Forms
                 MessageBox.Show("Error" + ex.Message);
             }
         }
-        private void CheckBoss(string Username)
+        private bool CheckBoss(string Username)
         {
             try
             {
@@ -68,12 +69,13 @@ namespace e_ShopManager.Forms
                         if (role == "BOSS")
                         {
                             AddUserBtn.Visible = true;
+                            return true;
                         }
                         else
                         {
                             AddUserBtn.Visible = false;
+                            return false;
                         }
-
                     }
                 }
             }
@@ -81,6 +83,7 @@ namespace e_ShopManager.Forms
             {
                 MessageBox.Show("Error" + ex.Message);
             }
+            return false;
         }
         private void ChangePassBtn_Click(object sender, EventArgs e)
         {
@@ -112,6 +115,35 @@ namespace e_ShopManager.Forms
                 UserAuth loginForm = new UserAuth();
                 loginForm.ShowDialog();
                 menuForm.Close();
+            }
+
+        }
+        private void User_Load()
+        {
+            if (CheckBoss(currentUsername))
+            {
+                UserData.Visible = true;
+                try
+                {
+                    using (SqlConnection conn = DBHelper.Instance.GetConnection())
+                    {
+                        conn.Open();
+                        string query = "SELECT id,username,full_name,email,role,created_at FROM empinfo";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        UserData.DataSource = dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex.Message);
+                }
+            }
+            else
+            {
+                UserData.Visible = false;
             }
 
         }

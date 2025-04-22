@@ -70,16 +70,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
-    <Compile Include="Forms\AddUser.cs">
+    <Compile Include="Forms\User\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddUser.Designer.cs">
+    <Compile Include="Forms\User\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ChangePass.cs">
+    <Compile Include="Forms\User\ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ChangePass.Designer.cs">
+    <Compile Include="Forms\User\ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Customer.cs">
@@ -100,10 +100,10 @@
     <Compile Include="Forms\E-Shop.Designer.cs">
       <DependentUpon>E-Shop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditUser.cs">
+    <Compile Include="Forms\User\EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditUser.Designer.cs">
+    <Compile Include="Forms\User\EditUser.Designer.cs">
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Order.cs">
@@ -118,10 +118,10 @@
     <Compile Include="Forms\Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User.cs">
+    <Compile Include="Forms\User\User.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User.Designer.cs">
+    <Compile Include="Forms\User\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserAuth.cs">
@@ -130,24 +130,25 @@
     <Compile Include="Forms\UserAuth.Designer.cs">
       <DependentUpon>UserAuth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\AddUser.resx">
+    <EmbeddedResource Include="Forms\User\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChangePass.resx">
+    <EmbeddedResource Include="Forms\User\ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\E-Shop.resx">
       <DependentUpon>E-Shop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditUser.resx">
+    <EmbeddedResource Include="Forms\User\EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User.resx">
+    <EmbeddedResource Include="Forms\User\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserAuth.resx">
@@ -177,7 +178,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forms\Product\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\management.png" />
     <Content Include="Assets\enlarge .png" />
